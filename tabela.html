@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo WA Comercial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Container simulando a tela do celular (Stories) */
+        .story-container {
+            width: 100%;
+            max-width: 450px; /* Largura ideal para leitura em mobile */
+            background: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Cabeçalho */
+        .header {
+            background-color: #0B1120; /* Azul Escuro da Marca */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid #cea31e; /* Detalhe dourado */
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 12px;
+            opacity: 0.8;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* Conteúdo da Tabela */
+        .content {
+            padding: 20px;
+        }
+
+        /* Estilo das Seções */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .badge {
+            font-size: 10px;
+            font-weight: 800;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* Cores das Categorias */
+        .bg-red { background-color: #ef4444; }
+        .bg-blue { background-color: #3b82f6; }
+        .bg-gold { background-color: #eab308; }
+        .bg-green { background-color: #22c55e; }
+
+        /* Linhas de Serviço */
+        .service-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 13px;
+        }
+
+        .service-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            color: #374151;
+            font-weight: 600;
+            padding-right: 10px;
+        }
+
+        .service-price {
+            color: #2563eb; /* Azul para o preço */
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #f8fafc;
+            padding: 20px;
+            text-align: center;
+            font-size: 10px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cta {
+            margin-top: 5px;
+            font-weight: 800;
+            color: #0B1120;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="story-container">
+        <div class="header">
+            <h1>WA COMERCIAL</h1>
+            <p>Soluções em Vendas e Estratégia Digital</p>
+        </div>
+
+        <div class="content">
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="badge bg-red">Tráfego</span>
+                    <span class="section-title">Atrair Novos Clientes</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Gestão de Tráfego 15 Dias</span>
+                    <span class="service-price">R$ 1.000,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Gestão de Tráfego 30 Dias</span>
+                    <span class="service-price">R$ 2.000,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de 01 Anúncio</span>
+                    <span class="service-price">R$ 97,90</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de 04 Anúncios</span>
+                    <span class="service-price">R$ 379,60</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de 10 Anúncios</span>
+                    <span class="service-price">R$ 874,00</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <span class="badge bg-blue">Web Design</span>
+                    <span class="section-title">Converter em Vendas</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Site com uma página</span>
+                    <span class="service-price">R$ 497,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Landing Page Alta Conversão</span>
+                    <span class="service-price">R$ 1.497,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de Loja Virtual</span>
+                    <span class="service-price">R$ 997,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Atualização de Site</span>
+                    <span class="service-price">R$ 99,70</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <span class="badge bg-gold">Premium</span>
+                    <span class="section-title">Consultoria e Mentoria</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Mentoria Comercial 30 Dias</span>
+                    <span class="service-price">R$ 4.500,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Mentoria Comercial 15 Dias</span>
+                    <span class="service-price">R$ 2.500,00</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Consultoria de 1 Hora</span>
+                    <span class="service-price">R$ 200,00</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <span class="badge bg-green">Design</span>
+                    <span class="section-title">Arte e Criativos</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de Logotipo</span>
+                    <span class="service-price">R$ 99,90</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de Cartão de Visita</span>
+                    <span class="service-price">R$ 89,90</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Vídeo Animado 30s</span>
+                    <span class="service-price">R$ 97,90</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de Panfleto</span>
+                    <span class="service-price">R$ 89,80</span>
+                </div>
+                <div class="service-row">
+                    <span class="service-name">Criação de Calendário</span>
+                    <span class="service-price">R$ 99,90</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Valores sujeitos a alteração.</p>
+            <p class="cta">ENTRE EM CONTATO PARA FECHAR O SEU PACOTE</p>
+        </div>
+    </div>
+
+</body>
+</html>
