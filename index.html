@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo WA Comercial - Colorido</title>
+    <title>Catálogo WA Comercial - Oficial</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap');
 
@@ -16,37 +16,34 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Fundo ligeiramente azulado para frescor */
-            background-color: #f0f4f8;
+            background-color: #f0f4f8; /* Fundo geral da página */
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            padding-top: 20px;
-            padding-bottom: 20px;
         }
 
         .story-container {
             width: 100%;
-            max-width: 420px;
+            max-width: 450px; /* Largura máxima estilo mobile */
             background: #fff;
             position: relative;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            min-height: 100vh; /* Ocupa toda a altura */
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+            /* Sem bordas arredondadas no topo para iniciar a página normalmente */
         }
 
-        /* Cabeçalho Mais Colorido e Vibrante */
+        /* Cabeçalho Escuro e Reto */
         .header {
-            /* Gradiente vibrante Roxo -> Azul */
-            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+            /* Gradiente Azul Escuro Profundo */
+            background: linear-gradient(180deg, #020617 0%, #172554 100%);
             color: white;
-            padding: 30px 24px;
+            padding: 40px 24px 30px 24px; /* Mais espaço no topo */
             text-align: left;
             position: relative;
         }
 
-        /* Detalhe de onda no final do header */
+        /* Detalhe sutil de onda apenas na parte inferior do header para conectar com o branco */
         .header::after {
             content: '';
             position: absolute;
@@ -62,27 +59,26 @@
             max-width: 90px;
             height: auto;
             display: block;
-            margin-bottom: 12px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            margin-bottom: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .header h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .header p {
-            font-size: 12px;
-            opacity: 0.9;
+            font-size: 13px;
+            opacity: 0.8;
             font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: #e0e7ff;
+            color: #bfdbfe; /* Azul bem claro */
         }
 
         .content {
@@ -97,9 +93,9 @@
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 24px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #f1f5f9;
-            overflow: hidden; /* Para a borda colorida */
+            overflow: hidden;
         }
 
         .section-header {
@@ -115,7 +111,6 @@
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             font-weight: 700;
-            /* Cor definida pelo tema abaixo */
         }
 
         .badge {
@@ -125,31 +120,30 @@
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: white; /* Texto branco para contraste */
+            color: white;
         }
 
-        /* --- TEMAS DE CORES --- */
+        /* --- TEMAS DE CORES (Vibrantes) --- */
 
         /* Tema Verde (Design) */
-        .section.theme-green { border-top: 4px solid #22c55e; }
+        .section.theme-green { border-top: 4px solid #16a34a; }
         .section.theme-green .section-title { color: #16a34a; }
-        .section.theme-green .badge { background-color: #22c55e; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3); }
-        .section.theme-green .service-price { background-color: #dcfce7; color: #15803d; }
+        .section.theme-green .badge { background-color: #16a34a; }
+        .section.theme-green .service-price { background-color: #dcfce7; color: #14532d; }
 
         /* Tema Azul (Web) */
-        .section.theme-blue { border-top: 4px solid #3b82f6; }
+        .section.theme-blue { border-top: 4px solid #2563eb; }
         .section.theme-blue .section-title { color: #2563eb; }
-        .section.theme-blue .badge { background-color: #3b82f6; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
-        .section.theme-blue .service-price { background-color: #dbeafe; color: #1e40af; }
+        .section.theme-blue .badge { background-color: #2563eb; }
+        .section.theme-blue .service-price { background-color: #dbeafe; color: #1e3a8a; }
 
         /* Tema Vermelho (Tráfego) */
-        .section.theme-red { border-top: 4px solid #ef4444; }
+        .section.theme-red { border-top: 4px solid #dc2626; }
         .section.theme-red .section-title { color: #dc2626; }
-        .section.theme-red .badge { background-color: #ef4444; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3); }
-        .section.theme-red .service-price { background-color: #fee2e2; color: #991b1b; }
+        .section.theme-red .badge { background-color: #dc2626; }
+        .section.theme-red .service-price { background-color: #fee2e2; color: #7f1d1d; }
 
         /* --- Fim Temas --- */
-
 
         .service-row {
             display: flex;
@@ -166,19 +160,18 @@
 
         .service-row:hover {
             transform: translateX(5px);
-            background-color: #fdfdfd;
+            background-color: #fafafa;
         }
 
         .service-name {
             color: #475569;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             padding-right: 10px;
         }
 
-        /* Preço destacado (Cores definidas nos temas acima) */
         .service-price {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 13px;
             padding: 6px 10px;
             border-radius: 8px;
@@ -187,36 +180,36 @@
 
         .footer {
             background-color: #fff;
-            padding: 30px 24px;
+            padding: 40px 24px;
             text-align: center;
             border-top: 1px solid #f1f5f9;
+            padding-bottom: 60px; /* Espaço extra no final */
         }
 
         .footer p {
-            font-size: 11px;
+            font-size: 12px;
             color: #94a3b8;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        /* Botão CTA com Gradiente */
+        /* Botão CTA Escuro para combinar com o topo */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
             color: white;
             font-weight: 700;
             font-size: 14px;
-            padding: 14px 32px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.25);
             transition: transform 0.2s;
         }
-        
+
         .cta-button:hover {
              transform: translateY(-2px);
-             box-shadow: 0 12px 25px rgba(99, 102, 241, 0.4);
         }
 
     </style>
@@ -232,6 +225,7 @@
 
         <div class="content">
 
+            <!-- 1ª Seção: TEMA VERDE -->
             <div class="section theme-green">
                 <div class="section-header">
                     <span class="section-title">Arte e Criativos</span>
@@ -259,6 +253,7 @@
                 </div>
             </div>
 
+            <!-- 2ª Seção: TEMA AZUL -->
             <div class="section theme-blue">
                 <div class="section-header">
                     <span class="section-title">Converter em Vendas</span>
@@ -282,6 +277,7 @@
                 </div>
             </div>
 
+            <!-- 3ª Seção: TEMA VERMELHO -->
             <div class="section theme-red">
                 <div class="section-header">
                     <span class="section-title">Atrair Clientes</span>
