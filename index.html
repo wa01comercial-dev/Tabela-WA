@@ -3,144 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo WA Comercial - Stories</title>
+    <title>Catálogo WA Comercial - Colorido</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap');
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5;
+            /* Fundo ligeiramente azulado para frescor */
+            background-color: #f0f4f8;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
-        /* Container simulando a tela do celular (Stories) */
         .story-container {
             width: 100%;
-            max-width: 450px;
-            background: white;
+            max-width: 420px;
+            background: #fff;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* Cabeçalho */
+        /* Cabeçalho Mais Colorido e Vibrante */
         .header {
-            background-color: #0B1120;
+            /* Gradiente vibrante Roxo -> Azul */
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
             color: white;
-            padding: 35px 20px;
-            text-align: left; /* ALINHAMENTO À ESQUERDA */
-            border-bottom: 4px solid #cea31e;
+            padding: 30px 24px;
+            text-align: left;
+            position: relative;
         }
 
-        /* Estilo da Logo Imagem - Esquerda */
+        /* Detalhe de onda no final do header */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: #fff;
+            border-radius: 24px 24px 0 0;
+        }
+
         .header-logo {
-            max-width: 90px; /* Tamanho ajustado */
+            max-width: 90px;
             height: auto;
             display: block;
-            margin: 0 0 10px 0; /* Margem zero na esquerda */
+            margin-bottom: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .header p {
-            font-size: 13px;
-            opacity: 0.85;
-            font-weight: 400;
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            margin-top: 5px;
+            color: #e0e7ff;
         }
 
-        /* Conteúdo da Tabela */
         .content {
-            padding: 25px 20px;
+            padding: 24px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Estilo das Seções */
+        /* Estilo Base dos Cards de Seção */
         .section {
-            margin-bottom: 35px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            overflow: hidden; /* Para a borda colorida */
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
-            gap: 10px;
-        }
-
-        .badge {
-            font-size: 11px;
-            font-weight: 800;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            white-space: nowrap;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #f8fafc;
+            padding-bottom: 12px;
         }
 
         .section-title {
-            font-size: 15px;
-            font-weight: 800;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            /* Cor definida pelo tema abaixo */
         }
 
-        /* Cores das Categorias */
-        .bg-red { background-color: #ef4444; }
-        .bg-blue { background-color: #3b82f6; }
-        .bg-green { background-color: #22c55e; }
+        .badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: white; /* Texto branco para contraste */
+        }
 
-        /* Linhas de Serviço */
+        /* --- TEMAS DE CORES --- */
+
+        /* Tema Verde (Design) */
+        .section.theme-green { border-top: 4px solid #22c55e; }
+        .section.theme-green .section-title { color: #16a34a; }
+        .section.theme-green .badge { background-color: #22c55e; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3); }
+        .section.theme-green .service-price { background-color: #dcfce7; color: #15803d; }
+
+        /* Tema Azul (Web) */
+        .section.theme-blue { border-top: 4px solid #3b82f6; }
+        .section.theme-blue .section-title { color: #2563eb; }
+        .section.theme-blue .badge { background-color: #3b82f6; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
+        .section.theme-blue .service-price { background-color: #dbeafe; color: #1e40af; }
+
+        /* Tema Vermelho (Tráfego) */
+        .section.theme-red { border-top: 4px solid #ef4444; }
+        .section.theme-red .section-title { color: #dc2626; }
+        .section.theme-red .badge { background-color: #ef4444; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3); }
+        .section.theme-red .service-price { background-color: #fee2e2; color: #991b1b; }
+
+        /* --- Fim Temas --- */
+
+
         .service-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 12px 0;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 14px;
+            border-bottom: 1px dashed #e2e8f0;
+            transition: all 0.2s ease;
         }
 
         .service-row:last-child {
             border-bottom: none;
         }
 
+        .service-row:hover {
+            transform: translateX(5px);
+            background-color: #fdfdfd;
+        }
+
         .service-name {
-            color: #374151;
-            font-weight: 600;
-            padding-right: 15px;
-            flex: 1;
-        }
-
-        .service-price {
-            color: #2563eb;
-            font-weight: 800;
-            white-space: nowrap;
-            font-size: 15px;
-        }
-
-        /* Rodapé */
-        .footer {
-            background-color: #f8fafc;
-            padding: 25px 20px;
-            text-align: center;
-            font-size: 11px;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .cta {
-            margin-top: 8px;
-            font-weight: 800;
-            color: #0B1120;
+            color: #475569;
             font-size: 13px;
+            font-weight: 600;
+            padding-right: 10px;
+        }
+
+        /* Preço destacado (Cores definidas nos temas acima) */
+        .service-price {
+            font-weight: 700;
+            font-size: 13px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 30px 24px;
+            text-align: center;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .footer p {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        /* Botão CTA com Gradiente */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 14px 32px;
+            border-radius: 50px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+             transform: translateY(-2px);
+             box-shadow: 0 12px 25px rgba(99, 102, 241, 0.4);
         }
 
     </style>
@@ -150,26 +226,27 @@
     <div class="story-container">
         <div class="header">
             <img src="https://blogger.googleusercontent.com/img/a/AVvXsEj-3GM-m_E8gJU40EyfZrjiP-VUoQ-si1rZW8kqpnM8lFRnHYa8BGw9vfREaU5nTQUS3Dab-qMS7nj_Mg2Lb-1sRdnSf82SEwpIHq5OmUEWpxDmi271nB0aqKoi0IwUwYhr4Mxeo_JvX0WYj70s6Vjbte9wEe8aMWbM-KVMiGysWWP1Kyu3F_fvk_okVhc=s196" alt="WA Comercial Logo" class="header-logo">
-            <p>Soluções em Vendas e Estratégia Digital</p>
+            <h2>WA COMERCIAL</h2>
+            <p>Soluções em Vendas & Estratégia</p>
         </div>
 
         <div class="content">
 
-            <div class="section">
+            <div class="section theme-green">
                 <div class="section-header">
-                    <span class="badge bg-green">Design</span>
                     <span class="section-title">Arte e Criativos</span>
+                    <span class="badge">Design</span>
                 </div>
                 <div class="service-row">
                     <span class="service-name">Criação de Logotipo</span>
                     <span class="service-price">R$ 99,90</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Criação de Cartão de Visita</span>
+                    <span class="service-name">Cartão de Visita Digital</span>
                     <span class="service-price">R$ 89,90</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Vídeo Animado 30s</span>
+                    <span class="service-name">Vídeo Animado (30s)</span>
                     <span class="service-price">R$ 97,90</span>
                 </div>
                 <div class="service-row">
@@ -182,13 +259,13 @@
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section theme-blue">
                 <div class="section-header">
-                    <span class="badge bg-blue">Web Design</span>
                     <span class="section-title">Converter em Vendas</span>
+                    <span class="badge">Web</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Site com uma página</span>
+                    <span class="service-name">Site One Page</span>
                     <span class="service-price">R$ 497,00</span>
                 </div>
                 <div class="service-row">
@@ -196,26 +273,26 @@
                     <span class="service-price">R$ 1.497,00</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Criação de Loja Virtual</span>
+                    <span class="service-name">Loja Virtual Completa</span>
                     <span class="service-price">R$ 997,00</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Atualização de Site</span>
+                    <span class="service-name">Atualização/Manutenção</span>
                     <span class="service-price">R$ 99,70</span>
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section theme-red">
                 <div class="section-header">
-                    <span class="badge bg-red">Tráfego</span>
-                    <span class="section-title">Atrair Novos Clientes</span>
+                    <span class="section-title">Atrair Clientes</span>
+                    <span class="badge">Tráfego</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Gestão de Tráfego 15 Dias</span>
+                    <span class="service-name">Gestão (15 Dias)</span>
                     <span class="service-price">R$ 1.000,00</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Gestão de Tráfego 30 Dias</span>
+                    <span class="service-name">Gestão (30 Dias)</span>
                     <span class="service-price">R$ 2.000,00</span>
                 </div>
                 <div class="service-row">
@@ -223,11 +300,11 @@
                     <span class="service-price">R$ 97,90</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Criação de 04 Anúncios</span>
+                    <span class="service-name">Pack 04 Anúncios</span>
                     <span class="service-price">R$ 379,60</span>
                 </div>
                 <div class="service-row">
-                    <span class="service-name">Criação de 10 Anúncios</span>
+                    <span class="service-name">Pack 10 Anúncios</span>
                     <span class="service-price">R$ 874,00</span>
                 </div>
             </div>
@@ -235,8 +312,8 @@
         </div>
 
         <div class="footer">
-            <p>Valores sujeitos a alteração.</p>
-            <p class="cta">ENTRE EM CONTATO PARA FECHAR O SEU PACOTE</p>
+            <p>*Valores sujeitos a alteração sem aviso prévio.</p>
+            <div class="cta-button">Falar com Consultor</div>
         </div>
     </div>
 
